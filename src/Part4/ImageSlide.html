@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Imageslider</title>
+    <style>
+        #slideholder {
+            height: 300px;
+            width: 300px;
+            border: 3px black solid;
+            transition: 2s;
+        }
+    </style>
+</head>
+<body>
+    <div id="slideholder"></div>
+    <script>
+        let pictures = [1,2,3,4,5,6,7,8,9];
+        let teller = 1;
+        let slideholder = document.getElementById("slideholder");
+        slideholder.style.backgroundImage = "url('img/cat1.jpg')";
+
+        slideholder.addEventListener("click", function() {
+            slideholder.style.backgroundImage = "url('img/cat" + getCat() + ".jpg')";
+        });
+
+
+        function getCat() {
+            if(teller >= pictures.length) {
+                teller = 1;
+            }
+            else {
+                teller++;
+            }
+            console.log(teller);
+            return teller;
+        }
+    </script>
+    <!--<script src="imageslider.js"></script>-->
+</body>
+</html>

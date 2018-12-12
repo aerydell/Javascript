@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>crook-app</title>
+    <style>
+        #slideholder {
+            height: 300px;
+            width: 900px;
+            border: none;
+            transition: 0.5s;
+        }
+        #slideholder2 {
+            height: 300px;
+            width: 900px;
+            border: none;
+            transition: 0.5s;
+        }
+        #slideholder3 {
+            height: 300px;
+            width: 900px;
+            border: none;
+            transition: 0.5s;
+        }
+    </style>
+</head>
+<body>
+<div id="slideholder"></div>
+<div id="slideholder2"></div>
+<div id="slideholder3"></div>
+<script>
+    let pictures = [1,2,3,4,5,6];
+    let teller = 1;
+    let teller2 = 1;
+    let teller3 = 1;
+    let slideholder = document.getElementById("slideholder");
+    slideholder.style.backgroundImage = "url('img2/eyes1.jpg')";
+    let slideholder2 = document.getElementById("slideholder2");
+    slideholder2.style.backgroundImage = "url('img2/nose1.jpg')";
+    let slideholder3 = document.getElementById("slideholder3");
+    slideholder3.style.backgroundImage = "url('img2/mouth1.jpg')";
+
+
+    slideholder.addEventListener("click", function() {
+        slideholder.style.backgroundImage = "url('img2/eyes" + getEyes() + ".jpg')";
+    });
+
+    slideholder2.addEventListener("click", function() {
+        slideholder2.style.backgroundImage ="url('img2/nose" + getNose() + ".jpg')";
+        console.log(getNose());
+    });
+
+    slideholder3.addEventListener("click", function() {
+        slideholder3.style.backgroundImage ="url('img2/mouth" + getMouth() + ".jpg')";
+    });
+
+
+
+    function getEyes() {
+        teller++;
+
+        if(teller > pictures.length){
+            teller = 1;
+        }
+        return teller;
+    }
+
+    function getNose() {
+        teller2++;
+
+        if(teller2 > pictures.length){
+            teller2 = 1;
+        }
+        return teller2;
+    }
+
+    function getMouth() {
+        teller3++;
+
+        if(teller3 > pictures.length){
+            teller3 = 1;
+        }
+        return teller3;
+    }
+
+</script>
+<!--<script src="imageslider.js"></script>-->
+</body>
+</html>
